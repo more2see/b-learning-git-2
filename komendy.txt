@@ -1,0 +1,5 @@
+
+$ node_modules/.bin/autoprefixer-cli -o sass/style.prefixed.css sass/style.css
+
+
+Autoprefixer działa :-)
