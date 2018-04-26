@@ -3,3 +3,9 @@ $ node_modules/.bin/autoprefixer-cli -o sass/style.prefixed.css sass/style.css
 
 
 Autoprefixer działa :-)
+
+
+$ node_modules/.bin/nu-html-checker *.html
+
+Nu-html-checker działa :-)
+
