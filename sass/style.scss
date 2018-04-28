@@ -12,3 +12,30 @@ body {
 	text-align: center;
 	border: 2px solid black;
 }
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+html,
+body,
+ul,
+ol {
+  margin:  0;
+  padding: 0;
+}
+.message {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  color: #333;
+}
