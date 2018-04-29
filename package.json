@@ -17,7 +17,6 @@
     "watch": "globstar npm-run-all build -p watch:*",
     "build-dev:sass": "node-sass --output-style expanded -- source-map true -o css sass",
     "watch:sassprefixer": "globstar onchange 'sass/*.scss' -- npm-run-all build-dev:sass -s autoprefixer ",
-    
     "autoprefixer": "globstar onchange -d 100 'css/*.css' -- autoprefixer-cli -o css/style.css css/*.css ",
     "watch:browsersync": "browser-sync start --server --files 'css/style.css' '*.html' "
   },
