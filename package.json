@@ -8,20 +8,18 @@
     "test:html": "globstar nu-html-checker *.html",
     "init-project": "npm install && npm-run-all init:*",
     "init:dirs": "mkdirp sass css vendor images js",
-    "init:files": "touch README.md index.html sass/style.scss js/script.js",
+    "init:files": "touch README.md index.html sass/style.scss js/scripts.js",
     "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
     "build": "npm-run-all build:* test",
     "build:clean": "rimraf css/*.css",
     "build:sass": "node-sass --output-style compact -o css sass",
     "build:autoprefixer": "autoprefixer-cli css/style.css",
-    "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
-   
-   "watch": "npm-run-all build -p watch:*",
-   "watch:sassprefixer": "onchange sass/.scss -- npm-run all kompilator:sass -s autoprefixer",
+    "watch": "globstar npm-run-all build -p watch:*",
+    "build-dev:sass": "node-sass --output-style expanded -- source-map true -o css sass",
+    "watch:sassprefixer": "globstar onchange 'sass/*.scss' -- npm-run-all build-dev:sass -s autoprefixer ",
     
-    "kompilator:sass": "node-sass --output-style expanded --source-map true -o css sass",
-    "autoprefixer": "onchange -d 100 css/style.css -- autoprefixer-cli -o css/style.css css/style.css",
-    "watch:browsersync": "browser-sync start --server --files css/style.css *.html"
+    "autoprefixer": "globstar onchange -d 100 'css/*.css' -- autoprefixer-cli -o css/style.css css/*.css ",
+    "watch:browsersync": "browser-sync start --server --files 'css/style.css' '*.html' "
   },
   "keywords": [],
   "author": "",
